@@ -28,3 +28,6 @@ Route::get('/contact', 'ContactController@create');
 Route::post('/contact', 'ContactController@store');
 
 
+Route::post('/articles/{post_name}', 'ArticleController@AddComment');
+
+

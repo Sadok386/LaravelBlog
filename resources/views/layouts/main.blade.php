@@ -31,7 +31,7 @@
 
 <div class="callout large primary">
     <div class="text-center">
-        <h1>Notre {{ $titre }}</h1>
+        <h1>{{ $titre }}</h1>
         <h2 class="subheader">{{ $subheader }}</h2>
     </div>
 </div>
