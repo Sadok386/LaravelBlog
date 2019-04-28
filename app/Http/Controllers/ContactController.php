@@ -15,7 +15,7 @@ class ContactController extends Controller
     }
 
     public function store(ContactRequest $request) {
-
+        //Récupère tous les contacts
         \App\Contact::create ($request->all());
 
         $contacts = \App\Contact::all();

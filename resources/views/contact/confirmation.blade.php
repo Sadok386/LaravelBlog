@@ -14,7 +14,7 @@
         </div>
     </div>
     <div class="col">
-        <h1 style="text-align:center">List of Current contacts</h1>
+        <h1 style="text-align:center">Liste des contacts</h1>
         <ul style="list-style:none">
             @foreach ( $contacts as $contact )
             <li>Contact by {{ $contact->contact_name }} at {{ $contact->contact_date }}</li>
@@ -22,4 +22,10 @@
     </ul>
     </div>
 </div>
+
+<script>
+    setTimeout(function () {
+        window.location.href = "/";
+    }, 5000);
+</script>
 @endsection
