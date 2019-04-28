@@ -24,3 +24,5 @@ Réalisé par Sadok Ben Fredj et Julien Haegman.
     - Affichage des commentaires liés à un article
     - Formulaire de création d'un commentaire
     - Création d'un nouveau commentaire lors de l'envoi du formulaire
+
+- 2 - CRUD pour les commentaires
