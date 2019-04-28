@@ -37,6 +37,7 @@
 </style>
 
 @section('content')
+    <a href="addArticle" class="btn btn-primary btn-lg" role="button" aria-disabled="true">Add Article</a>
     <div class="polaroidContainer">
         @foreach ( $postsArticles as $key=>$postArticle )
             <div class="polaroid">
@@ -46,6 +47,14 @@
                         <h6>{{ $postArticle->post_title }}</h6>
                     </div>
                 </a>
+                <form action="deleteArticle" method="POST">
+                    @csrf
+                    <button name="id" value={{$postArticle->id}} type="submit" class="btn btn-danger">Delete</button>
+
+                </form>
+                <form method="GET" action="{{ action('ArticleController@editArticleForm', $postArticle->id) }}">
+                    <button value={{$postArticle->id}} type="submit" class="btn btn-danger">Edit</button>
+                </form>
             </div>
         @endforeach
     </div>

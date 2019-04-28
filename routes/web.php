@@ -30,4 +30,15 @@ Route::post('/contact', 'ContactController@store');
 
 Route::post('/articles/{post_name}', 'ArticleController@AddComment');
 
+//Ajout d'un article
+Route::get('addArticle', 'ArticleController@addArticleForm');
+Route::post('addArticle', 'ArticleController@addArticleFormAction');
+
+//Edit d'un article
+Route::get('editArticle/{id}','ArticleController@editArticleForm');
+Route::post('editArticle/{id}','ArticleController@editArticleFormAction');
+
+
+
+
 
