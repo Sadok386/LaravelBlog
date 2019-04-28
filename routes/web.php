@@ -38,7 +38,8 @@ Route::post('addArticle', 'ArticleController@addArticleFormAction');
 Route::get('editArticle/{id}','ArticleController@editArticleForm');
 Route::post('editArticle/{id}','ArticleController@editArticleFormAction');
 
-
+//Delete
+Route::post('deleteArticle','ArticleController@deleteArticle');
 
 
 
