@@ -18,8 +18,9 @@
                 <button name="id" value={{$postArticle->id}} type="submit" class="btn btn-danger">Delete</button>
 
             </form>
-            <form method="GET" action="{{ action('ArticleController@editArticleForm') }}">
-                <a href="{{ route('article.editArticleForm', $postArticle->id) }}" class="btn btn-primary btn-lg" role="button" aria-disabled="true">Add Article</a>
+            <form method="GET" action="{{ action('ArticleController@editArticleForm', $postArticle->id) }}">
+
+            <button value={{$postArticle->id}} type="submit" class="btn btn-danger">Edit</button>
             </form>
 
         </li>

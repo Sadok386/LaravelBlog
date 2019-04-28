@@ -2,7 +2,7 @@
 
 @section('content')
 
-    <form method="post" action="editArticle/{{ $post->id }} ">
+    <form method="post" action="{{ $post->id }} ">
         @csrf
         <div class="col-md-12 mb-3 center">
             <label for="title">Title:</label>

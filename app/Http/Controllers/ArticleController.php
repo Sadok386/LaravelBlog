@@ -93,22 +93,24 @@ class ArticleController extends Controller
 
 
     }
-    public function editArticleFormAction(Request $request)
+    public function editArticleFormAction(Request $request, $id)
     {
-        $post = \App\Post::where('id',$request->id);
+        $article = \App\Post::where('id',$id)->first();
 
-        return view('articles/editArticle/', array( //Pass the post to the view
-            'titre' => 'Edit Article',
-            'subheader' => 'Edit your article here'
-        ));
+        $article->post_title = $request->titre;
+        $article->post_name = $request->namePost;
+        $article->post_content = $request->content;
+        $article->post_category = $request->cat;
+        $article->post_date = now();
+        $article->save();
+
+        return back();
+
     }
     public function editArticleForm($id)
     {
-        $post = \App\Post::where('id',$id);
-        VarDumper::dump($post);die;
-        $postId = $post->id;
+        $post = \App\Post::where('id',$id)->first();
         return view('articles/editArticle', array( //Pass the post to the view
-            'postId'=> $postId,
             'post' =>$post,
             'titre' => 'Edit Article',
             'subheader' => 'Edit your article here'
