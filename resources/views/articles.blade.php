@@ -37,7 +37,7 @@
 </style>
 
 @section('content')
-    <a href="addArticle" class="btn btn-primary btn-lg" role="button" aria-disabled="true">Add Article</a>
+    <center><a href="addArticle" class="btn btn-primary btn-lg" role="button" aria-disabled="true">Ajouter un article</a></center>
     <div class="polaroidContainer">
         @foreach ( $postsArticles as $key=>$postArticle )
             <div class="polaroid">
@@ -45,16 +45,16 @@
                     <img src="img/{{$key % 3}}.jpg" alt="5 Terre" style="width:100%">
                     <div class="_container">
                         <h6>{{ $postArticle->post_title }}</h6>
+
+                        <form action="deleteArticle" method="POST">
+                            @csrf
+                            <button name="id" value={{$postArticle->id}} type="submit" class="btn btn-danger">Supprimer</button>
+                        </form>
+                        <form method="GET" action="{{ action('ArticleController@editArticleForm', $postArticle->id) }}">
+                            <button value={{$postArticle->id}} type="submit" class="btn btn-danger">Modifier</button>
+                        </form>
                     </div>
                 </a>
-                <form action="deleteArticle" method="POST">
-                    @csrf
-                    <button name="id" value={{$postArticle->id}} type="submit" class="btn btn-danger">Delete</button>
-
-                </form>
-                <form method="GET" action="{{ action('ArticleController@editArticleForm', $postArticle->id) }}">
-                    <button value={{$postArticle->id}} type="submit" class="btn btn-danger">Edit</button>
-                </form>
             </div>
         @endforeach
     </div>
